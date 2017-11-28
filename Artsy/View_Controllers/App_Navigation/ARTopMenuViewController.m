@@ -244,6 +244,10 @@ static const CGFloat ARMenuButtonDimension = 50;
             return [self rootNavigationControllerAtIndex:tabIndex.integerValue parameters:parameters].rootViewController;
         }];
     }
+    
+    [switchboard registerPathCallbackAtPath:@"/works-for-you" callback:^id _Nullable(NSDictionary * _Nullable parameters) {
+        return [self rootNavigationControllerAtIndex:0 parameters:parameters].rootViewController;
+    }];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
